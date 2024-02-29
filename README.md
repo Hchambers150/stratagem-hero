@@ -1,2 +1,2 @@
 # stratagem-hero
- Stratagem Hero from Helldivers 2
+stratagem hero from helldivers 2
