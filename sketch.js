@@ -24,7 +24,7 @@ function preload(){
     errorsound1.setVolume(0.25); // bonker
     errorsound2.setVolume(0.15); // long one
     winsound1.setVolume(0.15); // dink
-    winsound2.setVolume(0.2); // resetter
+    winsound2.setVolume(0.11); // resetter
   } catch (error) {
     console.log("offline")
   }
