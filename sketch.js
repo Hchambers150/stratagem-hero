@@ -21,10 +21,10 @@ function preload(){
     winsound1 = loadSound('sounds/winsound1.mp3');
     winsound2 = loadSound('sounds/winsound2.mp3');
 
-    errorsound1.setVolume(0.5);
-    errorsound2.setVolume(0.5);
-    winsound1.setVolume(0.5);
-    winsound2.setVolume(0.5);
+    errorsound1.setVolume(0.25); // bonker
+    errorsound2.setVolume(0.15); // long one
+    winsound1.setVolume(0.15); // dink
+    winsound2.setVolume(0.2); // resetter
   } catch (error) {
     console.log("offline")
   }
