@@ -9,6 +9,22 @@ let punishAmount = 5;
 let pace = 4;
 let score = 0;
 
+// let errorsound1;
+// let errorsound2;
+// let winsound1;
+// let winsounn2;
+
+function preload(){
+  try {
+    errorsound1 = loadSound('sounds/errorsound1.mp3');
+    errorsound2 = loadSound('sounds/errorsound2.mp3');
+    winsound1 = loadSound('sounds/winsound1.mp3');
+    winsound2 = loadSound('sounds/winsound2.mp3');
+  } catch (error) {
+    console.log("offline")
+  }
+}
+
 function reset(){
   active = [];
   trueActive = null;
@@ -124,6 +140,9 @@ function putBack(){
 
 function shakeScreen(frame){ // original coordinates ?? of each sprite?
 
+  
+
+
   if(frame == 0){
     // print(sprites);
     // getPositions();
@@ -131,6 +150,14 @@ function shakeScreen(frame){ // original coordinates ?? of each sprite?
     ogPos = getPositions();
     timerG.timerSprite.width -= punishAmount;
     score -= 50;
+
+    try{
+      errorsound1.play();
+      errorsound2.play();
+    } catch(error){
+      console.log("nosounds!")
+    }
+
     // print(og.length)
     // print(og)
   } else if (frame == 5) {
@@ -204,6 +231,10 @@ let winAmount = 15;
 
 function doCorrect(){
 
+  try{
+    winsound1.play();
+  } catch(error2){"no sound!"}
+
   trueActive.truePattern.splice(0,1);
   happy = true;
   correct++;
@@ -217,6 +248,7 @@ function doCorrect(){
     if(active.length >= 1){
           trueActive = active[0];
     } else { // TIMERSPACE
+      try{  winsound2.play();}catch(error){"no sound!"}
       print("hoya!",(timerG.timerSprite.width += winAmount*5) < timerG.timerSprite.maxWidth)
       moreDiff();
       if((timerG.timerSprite.width += winAmount*5) < timerG.timerSprite.maxWidth){
