@@ -20,6 +20,11 @@ function preload(){
     errorsound2 = loadSound('sounds/errorsound2.mp3');
     winsound1 = loadSound('sounds/winsound1.mp3');
     winsound2 = loadSound('sounds/winsound2.mp3');
+
+    errorsound1.setVolume(0.5);
+    errorsound2.setVolume(0.5);
+    winsound1.setVolume(0.5);
+    winsound2.setVolume(0.5);
   } catch (error) {
     console.log("offline")
   }
@@ -35,7 +40,7 @@ function reset(){
   happy = false;
   frameT = 0;
   correct = 0;
-
+  setVolume(0.25)
 
   deleteSprites();
   // timerG = new Timer();
@@ -140,10 +145,7 @@ function putBack(){
 
 function shakeScreen(frame){ // original coordinates ?? of each sprite?
 
-  
-
-
-  if(frame == 0){
+    if(frame == 0){
     // print(sprites);
     // getPositions();
     og = sprites;
@@ -166,6 +168,14 @@ function shakeScreen(frame){ // original coordinates ?? of each sprite?
     correct = 0;
     putBack();
     background(51);
+
+    try{
+      errorsound1.stop();
+      errorsound2.stop();
+    } catch(error){
+      console.log("nosounds!")
+    }
+
     return(0);
   }
   // print(frame)
