@@ -4,9 +4,9 @@ stratagems = [
       ["SH-20 Ballistic Shield Backpack", "v<vv^<", "blue"],
       ["SH-51 Directional Shield Backpack", "v^<^>^^", "blue"],
       ["SH-32 Shield Generator Pack", "v^<><>", "blue"],
-      ["AX/AR-23 Guard Dog", "v^<^>v", "blue"],
-      ["AX/LAS-5 Guard Dog Rover", "v^<^>>", "blue"],
-      ["AX/TX-13 Guard Dog Dog Breath", "v^<^>^", "blue"],
+      ["AX/AR-23 \"Guard Dog\"", "v^<^>v", "blue"],
+      ["AX/LAS-5 \"Guard Dog\" Rover", "v^<^>>", "blue"],
+      ["AX/TX-13 \"Guard Dog\" Dog Breath", "v^<^>^", "blue"],
 
       ["MG-43 Machine Gun", "v<>^>", "blue"],
       ["APW-1 Anti-Materiel Rifle", "v<>^v", "blue"],
