@@ -1,4 +1,5 @@
 stratagems = [
+  [
       ["LIFT-850 Jump Pack", "v^^v^", "blue"],
       ["B-1 Supply Pack", "v<v^^<", "blue"],
       ["SH-20 Ballistic Shield Backpack", "v<vv^<", "blue"],
@@ -72,4 +73,6 @@ stratagems = [
       ["Eagle Smoke Strike", "^>^v", "red"],
       ["Eagle 110MM Rocket Pods", "^>^<", "red"],
       ["Eagle 500kg Bomb", "^>vvv", "red"]
+  ]
+
 ]

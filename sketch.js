@@ -26,7 +26,7 @@ function preload(){
     winsound1.setVolume(0.15); // dink
     winsound2.setVolume(0.11); // resetter
   } catch (error) {
-    console.log("offline")
+    console.log("offline");
   }
 }
 
@@ -145,14 +145,13 @@ function putBack(){
 
 function shakeScreen(frame){ // original coordinates ?? of each sprite?
 
-    if(frame == 0){
+  if(frame == 0){
     // print(sprites);
     // getPositions();
     og = sprites;
     ogPos = getPositions();
     timerG.timerSprite.width -= punishAmount;
     score -= 50;
-
     try{
       errorsound1.play();
       errorsound2.play();
@@ -168,6 +167,7 @@ function shakeScreen(frame){ // original coordinates ?? of each sprite?
     correct = 0;
     putBack();
     background(51);
+    return(0);
 
     try{
       errorsound1.stop();
@@ -175,7 +175,6 @@ function shakeScreen(frame){ // original coordinates ?? of each sprite?
     } catch(error){
       console.log("nosounds!")
     }
-
     return(0);
   }
   // print(frame)
@@ -214,8 +213,8 @@ function moreDiff(){
       timerG.timerSprite.width = timerG.timerSprite.maxWidth;
 }
 
-function keyPressed(){ // add wasd
-  if((key == "ArrowUp" || key == "W") && trueActive.truePattern[0] == 2 && !angry){ // up
+function keyPressed(){
+  if(key == "ArrowUp" && trueActive.truePattern[0] == 2 && !angry){ // up
     doCorrect();
   }
   else if(key == "ArrowLeft" && trueActive.truePattern[0] == 3 && !angry ){ // left
@@ -240,7 +239,6 @@ function keyPressed(){ // add wasd
 let winAmount = 15;
 
 function doCorrect(){
-
   try{
     winsound1.play();
   } catch(error2){"no sound!"}
@@ -258,12 +256,12 @@ function doCorrect(){
     if(active.length >= 1){
           trueActive = active[0];
     } else { // TIMERSPACE
-      try{  winsound2.play();}catch(error){"no sound!"}
+            try{  winsound2.play();}catch(error){"no sound!"}
       print("hoya!",(timerG.timerSprite.width += winAmount*5) < timerG.timerSprite.maxWidth)
       moreDiff();
       if((timerG.timerSprite.width += winAmount*5) < timerG.timerSprite.maxWidth){
         timerG.timerSprite.width += winAmount*5;
-
+        try{  winsound2.play();}catch(error){"no sound!"}
       } else {
         timerG.timerSprite.width = timerG.timerSprite.maxWidth;
       }
@@ -369,6 +367,7 @@ class Stratagem{
 
   parsePattern(p){
     // print(p)
+    console.log(p)
     p = p.split("");
     // print(p)
     let o = [];
