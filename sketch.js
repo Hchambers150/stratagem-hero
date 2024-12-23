@@ -26,7 +26,7 @@ function preload(){
     winsound1.setVolume(0.15); // dink
     winsound2.setVolume(0.11); // resetter
   } catch (error) {
-    console.log("offline")
+    console.log("offline");
   }
 }
 
@@ -367,6 +367,7 @@ class Stratagem{
 
   parsePattern(p){
     // print(p)
+    console.log(p)
     p = p.split("");
     // print(p)
     let o = [];
